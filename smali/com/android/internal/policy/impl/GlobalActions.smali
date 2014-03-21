@@ -95,7 +95,11 @@
 
 .field private mDialog:Lcom/android/internal/policy/impl/GlobalActions$GlobalActionsDialog;
 
+.field private mDownload:Lcom/android/internal/policy/impl/GlobalActions$SinglePressAction;
+
 .field private final mDreamManager:Landroid/service/dreams/IDreamManager;
+
+.field private mFlashlight:Lcom/android/internal/policy/impl/GlobalActions$SinglePressAction;
 
 .field private mHandler:Landroid/os/Handler;
 
@@ -143,6 +147,8 @@
 .field private mPhoneStateListener2:Landroid/telephony/PhoneStateListener;
 
 .field private mPowerOff:Lcom/android/internal/policy/impl/GlobalActions$SinglePressAction;
+
+.field private mRecovery:Lcom/android/internal/policy/impl/GlobalActions$SinglePressAction;
 
 .field private mRestart:Lcom/android/internal/policy/impl/GlobalActions$SinglePressAction;
 
@@ -2331,15 +2337,45 @@
     iput-object v0, p0, Lcom/android/internal/policy/impl/GlobalActions;->mPowerOff:Lcom/android/internal/policy/impl/GlobalActions$SinglePressAction;
 
     .line 566
-    new-instance v0, Lcom/android/internal/policy/impl/GlobalActions$5;
+    new-instance v0, Lcom/android/internal/policy/impl/GlobalActions$99;
 
     const v1, 0x108097f
 
     const v2, 0x1040199
 
-    invoke-direct {v0, p0, v1, v2}, Lcom/android/internal/policy/impl/GlobalActions$5;-><init>(Lcom/android/internal/policy/impl/GlobalActions;II)V
+    invoke-direct {v0, p0, v1, v2}, Lcom/android/internal/policy/impl/GlobalActions$99;-><init>(Lcom/android/internal/policy/impl/GlobalActions;II)V
 
     iput-object v0, p0, Lcom/android/internal/policy/impl/GlobalActions;->mRestart:Lcom/android/internal/policy/impl/GlobalActions$SinglePressAction;
+
+    new-instance v0, Lcom/android/internal/policy/impl/GlobalActions$18;
+
+    const v1, 0x1080c9f
+
+    const v2, 0x10408e3
+
+    invoke-direct {v0, p0, v1, v2}, Lcom/android/internal/policy/impl/GlobalActions$18;-><init>(Lcom/android/internal/policy/impl/GlobalActions;II)V
+
+    iput-object v0, p0, Lcom/android/internal/policy/impl/GlobalActions;->mRecovery:Lcom/android/internal/policy/impl/GlobalActions$SinglePressAction;
+
+    new-instance v0, Lcom/android/internal/policy/impl/GlobalActions$19;
+
+    const v1, 0x1080c9d
+
+    const v2, 0x10408e4
+
+    invoke-direct {v0, p0, v1, v2}, Lcom/android/internal/policy/impl/GlobalActions$19;-><init>(Lcom/android/internal/policy/impl/GlobalActions;II)V
+
+    iput-object v0, p0, Lcom/android/internal/policy/impl/GlobalActions;->mDownload:Lcom/android/internal/policy/impl/GlobalActions$SinglePressAction;
+
+    new-instance v0, Lcom/android/internal/policy/impl/GlobalActions$20;
+
+    const v1, 0x1080c9e
+
+    const v2, 0x10408e5
+
+    invoke-direct {v0, p0, v1, v2}, Lcom/android/internal/policy/impl/GlobalActions$20;-><init>(Lcom/android/internal/policy/impl/GlobalActions;II)V
+
+    iput-object v0, p0, Lcom/android/internal/policy/impl/GlobalActions;->mFlashlight:Lcom/android/internal/policy/impl/GlobalActions$SinglePressAction;
 
     .line 595
     invoke-direct {p0}, Lcom/android/internal/policy/impl/GlobalActions;->onAirplaneModeChanged()V
@@ -2356,7 +2392,7 @@
     iput-object v0, p0, Lcom/android/internal/policy/impl/GlobalActions;->mBugReport:Lcom/android/internal/policy/impl/GlobalActions$SinglePressAction;
 
     .line 659
-    const/4 v0, 0x6
+    const/16 v0, 0x9
 
     new-array v0, v0, [Lcom/android/internal/policy/impl/GlobalActions$Action;
 
@@ -2389,6 +2425,24 @@
     const/4 v1, 0x5
 
     iget-object v2, p0, Lcom/android/internal/policy/impl/GlobalActions;->mBugReport:Lcom/android/internal/policy/impl/GlobalActions$SinglePressAction;
+
+    aput-object v2, v0, v1
+
+    const/4 v1, 0x6
+
+    iget-object v2, p0, Lcom/android/internal/policy/impl/GlobalActions;->mRecovery:Lcom/android/internal/policy/impl/GlobalActions$SinglePressAction;
+
+    aput-object v2, v0, v1
+
+    const/4 v1, 0x7
+
+    iget-object v2, p0, Lcom/android/internal/policy/impl/GlobalActions;->mDownload:Lcom/android/internal/policy/impl/GlobalActions$SinglePressAction;
+
+    aput-object v2, v0, v1
+
+    const/16 v1, 0x8
+
+    iget-object v2, p0, Lcom/android/internal/policy/impl/GlobalActions;->mFlashlight:Lcom/android/internal/policy/impl/GlobalActions$SinglePressAction;
 
     aput-object v2, v0, v1
 
